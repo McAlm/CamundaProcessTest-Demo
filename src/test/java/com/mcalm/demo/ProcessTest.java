@@ -45,7 +45,7 @@ public class ProcessTest {
   }
 
   @Test
-  void mediumRisk() throws InterruptedException {
+  void mediumRisk(){
 
     var applicationNumber = "12345";
     final ProcessInstanceEvent processInstance = client.newCreateInstanceCommand()//
