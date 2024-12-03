@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="riskDRD" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.28.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <decision id="risk" name="Risk">
+    <decisionTable id="DecisionTable_1rel5i8">
+      <input id="Input_1" label="Age">
+        <inputExpression id="InputExpression_1" typeRef="number">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Risk" name="risk" typeRef="string" />
+      <rule id="DecisionRule_1l9y0gm">
+        <inputEntry id="UnaryTests_1y51oi5">
+          <text>&lt;21</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0orlydo">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q20rga">
+        <inputEntry id="UnaryTests_0u8lhye">
+          <text>[22..65]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07rcxt7">
+          <text>"low"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00r9ijw">
+        <inputEntry id="UnaryTests_1dp6ly3">
+          <text>[65..75]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zpwp20">
+          <text>"medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w3u02e">
+        <inputEntry id="UnaryTests_1xwt9iz">
+          <text>&gt;75</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y0rn8l">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="risk">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
