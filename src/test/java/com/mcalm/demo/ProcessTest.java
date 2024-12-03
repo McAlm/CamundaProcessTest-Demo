@@ -30,7 +30,7 @@ public class ProcessTest {
   @Test
   void noRisk() {
     final ProcessInstanceEvent processInstance = client.newCreateInstanceCommand()//
-        .bpmnProcessId("doNothing")//
+        .bpmnProcessId("customerOnboarding")//
         .latestVersion()//
         .variables(Map.of("age", 53))
         .send().join();
@@ -49,7 +49,7 @@ public class ProcessTest {
 
     var applicationNumber = "12345";
     final ProcessInstanceEvent processInstance = client.newCreateInstanceCommand()//
-        .bpmnProcessId("doNothing")//
+        .bpmnProcessId("customerOnboarding")//
         .latestVersion()//
         .variables(Map.of("age", 67, "applicationNumber", applicationNumber))
         .send().join();
@@ -78,7 +78,7 @@ public class ProcessTest {
     var applicationNumber = "12345";
 
     final ProcessInstanceEvent processInstance = client.newCreateInstanceCommand()//
-        .bpmnProcessId("doNothing")//
+        .bpmnProcessId("customerOnboarding")//
         .latestVersion()//
         .variables(Map.of("age", 18 , "applicationNumber", applicationNumber))
         .send().join();
